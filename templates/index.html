@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="bandeau-haut">
+                <div class="logo-titre-container">
+                    <a href="/"><img src="/static/promeo.jpg" alt="Logo" class="logo"></a>
+                    <h1 class="titre">PROMEO</h1>
+                </div>
+            </div>
+            <div class="bandeau-bas">
+                <button id="btnConnexionEleve">Prendre Rendez-vous</button>
+                <button id="btnConnexionFormateurs">Connexion formateur</button>
+                <button id="btnAdministration">Administration</button>
+                {% if session.logged_in %}
+                    <button id="btnDeconnexion">Déconnexion</button>
+                {% endif %}
+            </div>
+        </header>
+
+        <h1>Élèves</h1>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nom</th>
+                    <th>Prénom</th>
+                    <th>Email</th>
+                    <th>Téléphone</th>
+                    <th>ID Classe</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for eleve in eleves %}
+                <tr>
+                    <td>{{ eleve.IdEleve }}</td>
+                    <td>{{ eleve.Nom }}</td>
+                    <td>{{ eleve.Prenom }}</td>
+                    <td>{{ eleve.Email }}</td>
+                    <td>{{ eleve.Telephone }}</td>
+                    <td>{{ eleve.IDClasse }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

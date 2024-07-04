@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Déclaration des métadonnées -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prise de rendez-vous</title>
+    <!-- Liaison vers la feuille de style -->
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+</head>
+
+<body>
+<header>
+    <!-- Bandeau supérieur -->
+    <div class="bandeau-haut">
+        <!-- Conteneur du logo et du titre -->
+        <div class="logo-titre-container">
+            <!-- Logo avec lien vers la page d'accueil -->
+            <a href="/"><img src="/static/promeo.jpg" alt="Logo" class="logo"></a>
+            <!-- Titre -->
+            <h1 class="titre">PROMEO</h1>
+        </div>
+    </div>
+
+    <!-- Bandeau inférieur -->
+    <div class="bandeau-bas">
+        <!-- Boutons de navigation -->
+        <button id="btnConnexionEleve">Prendre Rendez-vous</button>
+        <button id="btnConnexionFormateurs">Connexion formateur</button>
+        <button id="btnAdministration">administration</button>
+        <!-- Bouton de déconnexion si connecté -->
+        {% if session.logged_in %}
+        {% endif %}
+    </div>
+
+    <!-- Formulaire de connexion pour les élèves -->
+   
+<!-- Bloc pour le contenu spécifique de chaque page -->
+{% block content %}
+{% endblock %}
+</body>
+</html>
